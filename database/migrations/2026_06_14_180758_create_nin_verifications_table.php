@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('nin_verifications', function (Blueprint $table) {
             $table->id();
+            $table->string('nin');
+            $table->string('name')->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('status')->default('verified');
+            $table->json('api_response')->nullable();
             $table->timestamps();
         });
     }
